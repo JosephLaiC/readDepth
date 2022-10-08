@@ -451,7 +451,17 @@ makeGcCorrBins <- function(bin,windSize,chr){
       }
     }  
   }
-  return(data.frame(gc=matrix(gcBin),avgreads=matrix(numReads)/matrix(numHits),numreads=matrix(numReads)))
+  
+  gcTable <- NULL
+  for (i in 1:length(gcBin)){
+    gc <- gcBin[[i]]
+    avgreads <- numReads[[i]]/numHits[[i]]
+    numreads <- numReads[[i]]
+    
+    gcTable <- rbind(gcTable, data.frame(gc, avgreads, numreads))
+  }
+  
+  return(gcTable)
 }
 
 
