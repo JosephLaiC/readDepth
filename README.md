@@ -29,7 +29,7 @@ ReadDepth continues to have niche uses, especially on model organisms, but has l
     #install devtools if you don't have it already
     install.packages("devtools")
     library(devtools)
-    install_github("chrisamiller/readDepth")
+    install_github("JosephLaiC/readDepth")
 
 If you prefer to build the package by hand, follow these steps:
 
